@@ -9,6 +9,7 @@ var active = false
 onready var text_box = $NinePatchRect
 onready var dialogue_text = $NinePatchRect/Text
 onready var timer = $Timer
+onready var nameBG = $NinePatchRect/NameRect
 
 onready var player = get_parent().get_parent().find_node("Player")
 
@@ -61,9 +62,11 @@ func next_line():
 		cur_dialogue_index = -2
 		return
 	
-	$NinePatchRect/Name.text = dialogue[cur_dialogue_index]["name"]
+	var nameE = dialogue[cur_dialogue_index]["name"]
+	$NinePatchRect/Name.text = nameE
 	dialogue_text.text = dialogue[cur_dialogue_index]["text"]
-
+	nameBG.visible = true if nameE != "" else false
+	
 func _on_Timer_timeout():
 	dialogue_text.set_visible_characters(dialogue_text.get_visible_characters() + 1)
 	

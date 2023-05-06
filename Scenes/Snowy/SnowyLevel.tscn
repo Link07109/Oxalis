@@ -59,7 +59,7 @@ position = Vector2( 8, 6 )
 [node name="BottomRight" parent="Camera2D/Limits" index="1"]
 position = Vector2( 248, 176 )
 
-[node name="Items" type="Node2D" parent="YSort" index="0"]
+[node name="Items" type="YSort" parent="YSort" index="0"]
 
 [node name="ItemSpawner" parent="YSort/Items" index="0" instance=ExtResource( 6 )]
 

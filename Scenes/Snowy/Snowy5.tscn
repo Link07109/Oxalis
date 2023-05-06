@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Scenes/Snowy/SnowyLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Door.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://World/NEW SNOW TILES.tres" type="TileSet" id=4]
 [ext_resource path="res://World/new snow tiles BIGGER.png" type="Texture" id=5]
 [ext_resource path="res://World/new ssnow tile BIGGER.png" type="Texture" id=6]
+[ext_resource path="res://StaticNPC.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Grave.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -534,10 +536,20 @@ position = Vector2( 624, 464 )
 [node name="HauntedMansion" parent="YSort" index="0" instance=ExtResource( 3 )]
 position = Vector2( 472, 176 )
 
+[node name="Grave" parent="YSort" index="1" instance=ExtResource( 7 )]
+position = Vector2( 128, 240 )
+z_index = 1
+texture = ExtResource( 8 )
+
+[node name="DialogueBox" parent="YSort/Grave" index="2"]
+d_file = "res://Dialogue/IlyasGrave.json"
+
 [node name="ItemSpawner" parent="YSort/Items" index="0"]
 tile_data = PoolIntArray( 393240, 15, 0, 393241, 15, 0, 393242, 15, 0, 393243, 15, 0, 393244, 15, 0, 393245, 15, 0, 393246, 15, 0, 393247, 15, 0, 458776, 15, 0, 458777, 15, 0, 458778, 15, 0, 458779, 15, 0, 458780, 15, 0, 458781, 15, 0, 458782, 15, 0, 458783, 15, 0, 524310, 15, 0, 524311, 15, 0, 524312, 15, 0, 524313, 15, 0, 524314, 15, 0, 524315, 15, 0, 589846, 15, 0, 589847, 15, 0, 589848, 15, 0, 589857, 15, 0, 655382, 15, 0, 655383, 15, 0, 655384, 15, 0, 655393, 15, 0, 720918, 15, 0, 720919, 15, 0, 720920, 15, 0, 720929, 15, 0, 786437, 15, 0, 786438, 15, 0, 786439, 15, 0, 786440, 15, 0, 786441, 15, 0, 786442, 15, 0, 786443, 15, 0, 786456, 15, 0, 786464, 15, 0, 786466, 15, 0, 786467, 15, 0, 851973, 15, 0, 851974, 15, 0, 851975, 15, 0, 851976, 15, 0, 851977, 15, 0, 851978, 15, 0, 851979, 15, 0, 851992, 15, 0, 852003, 15, 0, 917508, 15, 0, 917509, 15, 0, 917510, 15, 0, 917511, 15, 0, 917512, 15, 0, 917513, 15, 0, 917514, 15, 0, 917515, 15, 0, 917516, 15, 0, 917517, 15, 0, 917539, 15, 0, 983044, 15, 0, 983045, 15, 0, 983046, 15, 0, 983049, 15, 0, 983050, 15, 0, 983051, 15, 0, 983052, 15, 0, 983053, 15, 0, 983075, 15, 0, 1048580, 15, 0, 1048581, 15, 0, 1048586, 15, 0, 1048587, 15, 0, 1048588, 15, 0, 1048589, 15, 0, 1048590, 15, 0, 1048591, 15, 0, 1114116, 15, 0, 1114123, 15, 0, 1114124, 15, 0, 1114125, 15, 0, 1114126, 15, 0, 1114127, 15, 0, 1179661, 15, 0, 1179662, 15, 0, 1179663, 15, 0, 1179664, 15, 0, 1179665, 15, 0, 1179666, 15, 0, 1179667, 15, 0, 1179670, 15, 0, 1179671, 15, 0, 1245199, 15, 0, 1245200, 15, 0, 1245201, 15, 0, 1245202, 15, 0, 1245203, 15, 0, 1245206, 15, 0 )
 
-[node name="Player" parent="YSort" index="2"]
+[node name="Player" parent="YSort" index="3"]
 position = Vector2( 128, 440 )
+z_index = 1
 
 [editable path="Camera2D"]
+[editable path="YSort/Grave"]

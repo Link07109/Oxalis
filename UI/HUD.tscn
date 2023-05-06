@@ -53,12 +53,14 @@ hframes = 2
 frame = 1
 
 [node name="SnowKeySprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 6, 34 )
 rotation = -0.379889
 scale = Vector2( 0.075, 0.075 )
 texture = ExtResource( 5 )
 
 [node name="NightmareKeySprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 16, 35 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 6 )

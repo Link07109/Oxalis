@@ -11,7 +11,10 @@ func _ready():
 	elif name.begins_with("Forest"):
 		MusicPlayer.play_music("res://Music and Sounds/Steel Thy Shovel.wav")
 	elif name.begins_with("Snowy"):
-		MusicPlayer.play_music("res://Music and Sounds/Snowy.wav")
+		if name == "Snowy5":
+			MusicPlayer.play_music("res://Music and Sounds/graveyard.wav")
+		else:
+			MusicPlayer.play_music("res://Music and Sounds/Snowy.wav")
 	
 	load_room()
 	
