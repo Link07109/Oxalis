@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Enemies/Bat.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/Ice Bat.png" type="Texture" id=2]
+
+[node name="EnemySpawner" type="Node"]
+
+[node name="Bat" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 5
+frame = 4
+
+[node name="IceBat" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 5
+frame = 4

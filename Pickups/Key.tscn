@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/keys.png" type="Texture" id=1]
+[ext_resource path="res://Pickups/Key.gd" type="Script" id=2]
+[ext_resource path="res://Pickups/Pickup.tscn" type="PackedScene" id=3]
+
+[node name="Key" instance=ExtResource( 3 )]
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 1 )

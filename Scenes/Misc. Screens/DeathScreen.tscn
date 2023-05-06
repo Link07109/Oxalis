@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Misc. Screens/DeathScreen.gd" type="Script" id=2]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://dpcomic.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 75
+outline_size = 1
+extra_spacing_bottom = -10
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=4]
+antialiased = false
+font_path = "res://dpcomic.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+font_data = SubResource( 4 )
+
+[node name="DeathScreen" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Door" parent="Node" instance=ExtResource( 3 )]
+visible = false
+target_level_path = "res://Scenes/Misc. Screens/TitleScreen.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -73.0
+margin_top = 10.0
+margin_right = 74.0
+margin_bottom = -25.0
+custom_colors/font_color = Color( 1, 0.254902, 0.254902, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "GAME
+OVER"
+
+[node name="Label3" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -60.0
+margin_top = 155.0
+margin_right = 58.0
+margin_bottom = -34.0
+custom_fonts/font = SubResource( 5 )
+text = "Press (B): controller
+Press [K]: keyboard"

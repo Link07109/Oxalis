@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Forest/FogLayer.gd" type="Script" id=1]
+[ext_resource path="res://World/fog-transparency.png" type="Texture" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 3
+
+[node name="ForestFog" type="ParallaxBackground"]
+layer = 1
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 256, 256 )
+script = ExtResource( 1 )
+
+[node name="Color" type="ColorRect" parent="ParallaxLayer2"]
+material = SubResource( 2 )
+margin_right = 256.0
+margin_bottom = 256.0
+color = Color( 0.0392157, 0.568627, 0.921569, 0.392157 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2( 256, 256 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+material = SubResource( 1 )
+texture = ExtResource( 2 )
+centered = false

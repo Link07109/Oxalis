@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Pickups/Chest.png" type="Texture" id=1]
+[ext_resource path="res://Pickups/SmallChest.png" type="Texture" id=2]
+[ext_resource path="res://Pickups/FloorSwitch.png" type="Texture" id=3]
+[ext_resource path="res://Pickups/keys.png" type="Texture" id=4]
+[ext_resource path="res://Pickups/PushableBlock.png" type="Texture" id=5]
+[ext_resource path="res://Pickups/Pot.png" type="Texture" id=6]
+[ext_resource path="res://Pickups/Grass.png" type="Texture" id=7]
+[ext_resource path="res://World/bettertree.png" type="Texture" id=8]
+[ext_resource path="res://Pickups/color block blue.png" type="Texture" id=9]
+[ext_resource path="res://Pickups/color block orange.png" type="Texture" id=10]
+[ext_resource path="res://World/SnowGrass.png" type="Texture" id=11]
+
+[node name="Node" type="Node"]
+
+[node name="Chest" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="SmallChest" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="EnemySmallChest" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="Pot" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="Key" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+hframes = 2
+frame = 1
+
+[node name="BossKey" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+hframes = 2
+
+[node name="FloorSwitch" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+hframes = 2
+
+[node name="ColorBlock" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+hframes = 2
+
+[node name="ColorBlockOrange" type="Sprite" parent="."]
+texture = ExtResource( 10 )
+hframes = 2
+
+[node name="Block" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="PushableBlock" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+
+[node name="Grass" type="Sprite" parent="."]
+texture = ExtResource( 7 )
+
+[node name="Tree" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+
+[node name="TreeCollision" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+
+[node name="SnowGrass" type="Sprite" parent="."]
+texture = ExtResource( 11 )

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Pickups/Switch.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pickups/Switch.gd" type="Script" id=2]
+[ext_resource path="res://World/dungeonBG backup.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="SwordSwitch" type="Sprite"]
+texture = ExtResource( 3 )
+hframes = 2
+script = ExtResource( 2 )
+isFloorSwitch = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="Switch" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[connection signal="area_entered" from="Switch" to="." method="_on_Switch_area_entered"]
+[connection signal="body_entered" from="Switch" to="." method="_on_Switch_body_entered"]

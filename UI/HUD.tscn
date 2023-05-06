@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://UI/HUD.gd" type="Script" id=1]
+[ext_resource path="res://UI/HeartUIFull.png" type="Texture" id=2]
+[ext_resource path="res://UI/HeartUIEmpty.png" type="Texture" id=3]
+[ext_resource path="res://World/keys.png" type="Texture" id=4]
+[ext_resource path="res://World/snow key.png" type="Texture" id=5]
+[ext_resource path="res://World/nightmare key.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://dpcomic.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 15
+outline_size = 1
+outline_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+font_data = SubResource( 1 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -160.0
+margin_bottom = -167.0
+script = ExtResource( 1 )
+
+[node name="HeartUIEmpty" type="TextureRect" parent="."]
+margin_right = 60.0
+margin_bottom = 10.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="HeartUIFull" type="TextureRect" parent="."]
+margin_right = 45.0
+margin_bottom = 10.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+
+[node name="KeyCount" type="Label" parent="."]
+margin_left = 13.0
+margin_top = 13.0
+margin_right = 29.0
+margin_bottom = 27.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+
+[node name="KeySprite" type="Sprite" parent="."]
+position = Vector2( 5.6, 20.075 )
+scale = Vector2( 0.675, 0.675 )
+texture = ExtResource( 4 )
+hframes = 2
+frame = 1
+
+[node name="SnowKeySprite" type="Sprite" parent="."]
+position = Vector2( 6, 34 )
+rotation = -0.379889
+scale = Vector2( 0.075, 0.075 )
+texture = ExtResource( 5 )
+
+[node name="NightmareKeySprite" type="Sprite" parent="."]
+position = Vector2( 16, 35 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )

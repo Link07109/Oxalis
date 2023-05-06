@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Dialogue/dialogue_box.png" type="Texture" id=1]
+[ext_resource path="res://DialogueBox.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://dpcomic.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = SubResource( 1 )
+
+[node name="DialogueBox" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+margin_left = 8.0
+margin_top = 167.0
+margin_right = 248.0
+margin_bottom = 215.0
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 32, 32 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 8.0
+margin_top = -16.0
+margin_right = 96.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Name"
+scroll_active = false
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 232.0
+margin_bottom = 40.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Text"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
